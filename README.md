@@ -1,5 +1,5 @@
 # rotbuster
-Encode or decode ROT-ciphers
+Command-line tool for encoding or decoding ROT-ciphers
 
 ----------------
 RUBENS ROTBUSTER
@@ -8,11 +8,10 @@ USAGE
 	-[EN-/DECODE] [ROT FORMAT] [LANGUAGE] "[TEXT]" 
 	
 FUNCTIONS:
-	-h, -help 			            Help screen
-	[EN-/DECODE]: 			        -e (encode) or -d (decode)
-	[ROT FORMAT]: 		    	    any number or -all (Only for decode)
-	[LANGUAGE]: 			          nor or eng
-	[PLAINTEXT]/[CIPHERTEXT]: 	"Text"
-
-
-Example: rotbuster -e 13 eng "helloworld"
+	-h, -help			Help screen
+	[EN-/DECODE]			-enc/enc (encode) or -dec/dec (decode)
+	[ROT FORMAT]			any number or -all/all (Only for decode)
+	[LANGUAGE]			-nor/nor or -eng/eng
+	[PLAINTEXT]/[CIPHERTEXT]	"text"	
+	
+Example: rotbuster -enc 13 -eng "helloworld"
