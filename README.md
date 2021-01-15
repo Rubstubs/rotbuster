@@ -5,8 +5,10 @@ Command-line tool for encoding or decoding ROT-ciphers
 RUBENS ROTBUSTER
 ----------------
 
-USAGE
+USAGE:
+
 	[EN-/DECODE] [ROT FORMAT] [LANGUAGE] [TEXT]
+	
 	
 FUNCTIONS:
 
