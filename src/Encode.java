@@ -14,7 +14,7 @@ public class Encode {
 
         // Handling user error in rot format selection
         if (rot < 1 || rot > (alphabetArray.length-1)) {
-            System.out.println("CHOOSE A ROT FORMAT BETWEEN 1 AND " + (alphabetArray.length-1) + "!");
+            System.out.println("\nERROR: CHOOSE A ROT FORMAT BETWEEN 1 AND " + (alphabetArray.length-1) + "!");
             return;
         }
 
