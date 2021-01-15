@@ -7,20 +7,20 @@ RUBENS ROTBUSTER
 
 USAGE:
 
-	[EN-/DECODE] [ROT FORMAT] [LANGUAGE] [TEXT]
+	[ENCODE OR DECODE] [ROT FORMAT] [LANGUAGE] [TEXT]
 	
 	
 FUNCTIONS:
 
-	-h, -help			Help screen
+	-h, -help			help screen
 
 	[EN-/DECODE]			-enc/enc (encode) or -dec/dec (decode)
 
-	[ROT FORMAT]			any number or -all/all (Only for decode)
+	[ROT FORMAT]			number representing ROT format, or -all/all(Only for decode-mode)
 
 	[LANGUAGE]			-nor/nor or -eng/eng
 
-	[PLAINTEXT]/[CIPHERTEXT]	"text"	
+	[PLAINTEXT]/[CIPHERTEXT]	"text" (no spaces or special characters)
 	
 	
 Example: rotbuster -enc 13 -eng "helloworld"
