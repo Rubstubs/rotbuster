@@ -23,4 +23,4 @@ FUNCTIONS:
 	[PLAINTEXT]/[CIPHERTEXT]	"text" (no spaces or special characters)
 	
 	
-Example: rotbuster -enc 13 -eng "helloworld"
+Example: java -jar rotbuster.jar enc 13 eng "helloworld"
