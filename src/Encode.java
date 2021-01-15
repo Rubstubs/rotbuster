@@ -1,6 +1,6 @@
 public class Encode {
     static void encodeSpecific(int rot, String language, String plaintext) {
-        String alphabet = "";
+        String alphabet;
         if (language.equals("nor")) {
             alphabet = "abcdefghijklmnopqrstuvwxyzøæå"; // referansealfabet
         } else if (language.equals("eng")) {

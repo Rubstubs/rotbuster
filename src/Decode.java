@@ -1,6 +1,6 @@
 public class Decode {
     static void decodeSpecific(int rot, String language, String ciphertext) {
-        String alphabet = "";
+        String alphabet;
         if (language.equals("nor")) {
             alphabet = "abcdefghijklmnopqrstuvwxyzøæå"; // referansealfabet
         } else if (language.equals("eng")) {
