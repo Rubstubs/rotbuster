@@ -10,7 +10,15 @@ public class Encode {
             return;
         }
 
+
         char[] alphabetArray = alphabet.toCharArray(); // alfabetet nummereres
+
+        // Handling user error in rot format selection
+        if (rot < 1 || rot > (alphabetArray.length-1)) {
+            System.out.println("CHOOSE A ROT FORMAT BETWEEN 1 AND " + (alphabetArray.length-1) + "!");
+            return;
+        }
+
         char[] plaintextArray = (plaintext.toLowerCase()).toCharArray(); // Code til array
         int[] charNumber = new int[plaintext.length()]; // code til nummer i array
         String ciphertext = "";
