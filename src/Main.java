@@ -12,14 +12,14 @@ public class Main {
             String text = args[3];
             Encode.encodeSpecific(rot, lang, text);
 
-        // CALL DECODE ALL
+        // CALL DECODE ALL METHOD
         } else if (args.length == 4 && (args[0].equals("-dec") || args[0].equals("dec")) && ((args[1].equals("-all") || (args[1].equals("all"))))) {
             String lang;
             if(args[2].equals("nor") || args[2].equals("-nor")) { lang = "nor"; } else lang = "eng";
             String text = args[3];
             Decode.decodeAll(lang, text);
 
-        // DECODE SPECIFIC ROT
+        // DECODE SPECIFIC ROT METHOD
         } else if (args.length == 4 && (args[0].equals("-dec") || args[0].equals("dec"))) {
             int rot = Integer.parseInt(args[1]);
             String lang;

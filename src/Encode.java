@@ -1,15 +1,14 @@
 public class Encode {
     static void encodeSpecific(int rot, String language, String plaintext) {
+
+        // Rett alfabet blir satt som referansealfabet
         String alphabet;
-        if (language.equals("nor")) {
-            alphabet = "abcdefghijklmnopqrstuvwxyzøæå"; // referansealfabet
-        } else if (language.equals("eng")) {
-            alphabet = "abcdefghijklmnopqrstuvwxyz"; // referansealfabet
-        } else {
+        if (language.equals("nor")) alphabet = "abcdefghijklmnopqrstuvwxyzøæå"; // referansealfabet
+        else if (language.equals("eng")) alphabet = "abcdefghijklmnopqrstuvwxyz"; // referansealfabet
+        else {
             System.out.println("NOT A VALID LANGUAGE");
             return;
         }
-
 
         char[] alphabetArray = alphabet.toCharArray(); // alfabetet nummereres
 
@@ -19,23 +18,25 @@ public class Encode {
             return;
         }
 
-        char[] plaintextArray = (plaintext.toLowerCase()).toCharArray(); // Code til array
+        char[] plaintextArray = (plaintext.toLowerCase()).toCharArray(); // plaintext til array
         int[] charNumber = new int[plaintext.length()]; // code til nummer i array
+
+        // Konvertering
         String ciphertext = "";
-
         for (int i = 0; i < plaintextArray.length; i++) {
-            charNumber[i] = alphabet.indexOf(plaintextArray[i]);
-            int encodedCharNumber;
+            charNumber[i] = alphabet.indexOf(plaintextArray[i]); // Setter alfabetisk verdi av plaintext inn i int array
 
-            if (charNumber[i] + rot > alphabetArray.length-1) {
-                encodedCharNumber = (charNumber[i] + rot) - alphabetArray.length;
-            } else {
-                encodedCharNumber = (charNumber[i] + rot);
-            }
-            char newEncodedChar = alphabetArray[encodedCharNumber];
-            ciphertext += newEncodedChar;
+            // Bestemmer ROT-siffer-verdien
+            int encodedCharNumber;
+            if (charNumber[i] + rot > alphabetArray.length-1) encodedCharNumber = (charNumber[i] + rot) - alphabetArray.length;
+            else encodedCharNumber = (charNumber[i] + rot);
+
+            char newEncodedChar = alphabetArray[encodedCharNumber]; // Konverterer ROT-siffer-verdien til bokstav
+
+            ciphertext += newEncodedChar; // Setter sammen ciphertext
         }
-        System.out.println("ENCODING ROT" + rot + ":");
+        // Print
+        System.out.println("\nENCODING ROT" + rot + "\n");
         System.out.println(" - PLAINTEXT:   " + plaintext);
         System.out.println(" - CIPHERTEXT:  " + ciphertext.toUpperCase());
     }
