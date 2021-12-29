@@ -1,3 +1,5 @@
+package no.rubstubs;
+
 public class Decode {
     static void decodeSpecific(int rot, String language, String ciphertext) {
 

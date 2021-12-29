@@ -1,3 +1,5 @@
+package no.rubstubs;
+
 public class Encode {
     static void encodeSpecific(int rot, String language, String plaintext) {
 

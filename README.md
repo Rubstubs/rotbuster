@@ -1,18 +1,31 @@
-# rotbuster
+# Rubens RotBuster
+
 Command-line tool for encoding or decoding ROT-ciphers
 
-----------------
-RUBENS ROTBUSTER
-----------------
+### Setup
+1. Clone this repository
+``` 
+git clone https://github.com/Rubstubs/rotbuster.git
+```
+2. Package with maven from project root
+```
+mvn package
+```
+3. Runnable jar will appear inside /target/
 
-USAGE:
+### Usage
 
-	[ENCODE OR DECODE] [ROT FORMAT] [LANGUAGE] [TEXT]
+    [ENCODE OR DECODE] [ROT FORMAT] [LANGUAGE] [TEXT]
+
 	
-	
-FUNCTIONS:
+Example
+    
+    java -jar .\target\rotbuster-1.0-SNAPSHOT.jar -enc 13 -eng "helloworld"
 
-	-h, -help			help screen
+
+### Functions
+
+        -h, -help                       help screen
 
 	[EN-/DECODE]			-enc/enc (encode) or -dec/dec (decode)
 
@@ -21,6 +34,7 @@ FUNCTIONS:
 	[LANGUAGE]			-nor/nor or -eng/eng
 
 	[PLAINTEXT]/[CIPHERTEXT]	"text" (no spaces or special characters)
-	
-	
-Example: java -jar rotbuster.jar enc 13 eng "helloworld"
+
+
+### Additional Notes
+* Currently supporting norwegian and english languages only

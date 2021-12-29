@@ -1,3 +1,5 @@
+package no.rubstubs;
+
 public class Help {
     static void help() {
         System.out.println("----------------");
