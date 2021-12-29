@@ -3,16 +3,16 @@ package no.rubstubs;
 public class Decode {
     static void decodeSpecific(int rot, String language, String ciphertext) {
 
-        // Rett alfabet blir satt som referansealfabet
+        // Setting reference alphabet
         String alphabet;
-        if (language.equals("nor")) alphabet = "abcdefghijklmnopqrstuvwxyzøæå"; // referansealfabet
-         else if (language.equals("eng")) alphabet = "abcdefghijklmnopqrstuvwxyz"; // referansealfabet
+        if (language.equals("nor")) alphabet = "abcdefghijklmnopqrstuvwxyzøæå"; // norwegian
+         else if (language.equals("eng")) alphabet = "abcdefghijklmnopqrstuvwxyz"; // english
          else {
             System.out.println("NOT A VALID LANGUAGE");
             return;
         }
 
-        char[] alphabetArray = alphabet.toCharArray(); // alfabetet nummereres
+        char[] alphabetArray = alphabet.toCharArray(); // Putting alphabet into char array
 
         // Handling user error in rot format selection
         if (rot < 1 || rot > (alphabetArray.length-1)) {
@@ -20,21 +20,21 @@ public class Decode {
             return;
         }
 
-        char[] cipherArray = (ciphertext.toLowerCase()).toCharArray(); // ciphertext til array
-        int[] charNumber = new int[ciphertext.length()]; // ciphertext til nummer i array
+        char[] cipherArray = (ciphertext.toLowerCase()).toCharArray(); // ciphertext to array
+        int[] charNumber = new int[ciphertext.length()]; // ciphertext to number in array
         String plaintext = "";
 
-        // Konvertering
+        // Converting
         for (int i = 0; i < cipherArray.length; i++) {
-            charNumber[i] = alphabet.indexOf(cipherArray[i]); // Setter alfabetisk verdi av plaintext inn i int array
+            charNumber[i] = alphabet.indexOf(cipherArray[i]); //Setting alphabetic value of plaintext into an int array
 
-            // Bestemmer plaintext-siffer-verdien
+            // Decide plaintext cipher value
             int decodedCharNumber;
             if (charNumber[i] - rot < 0) decodedCharNumber = alphabetArray.length + (charNumber[i] - rot);
             else decodedCharNumber = charNumber[i] - rot;
 
-            char newDecodedChar = alphabetArray[decodedCharNumber]; // Konverterer plaintext-siffer-verdien til bokstav
-            plaintext += newDecodedChar; // Setter sammen plaintext
+            char newDecodedChar = alphabetArray[decodedCharNumber]; // Convert plaintext cipher value to letter
+            plaintext += newDecodedChar; // Put together plaintext
         }
 
         // Print
@@ -46,28 +46,28 @@ public class Decode {
     static void decodeAll(String language, String ciphertext) {
         System.out.println("\nDECODING ALL ROTS FROM CIPHERTEXT: " + ciphertext + "\n"); // Print
 
-        // Rett alfabet blir satt som referansealfabet
+        // Setting reference alphabet
         String alphabet = "";
-        if (language.equals("nor")) alphabet = "abcdefghijklmnopqrstuvwxyzøæå"; // referansealfabet
-        else if (language.equals("eng")) alphabet = "abcdefghijklmnopqrstuvwxyz"; // referansealfabet
+        if (language.equals("nor")) alphabet = "abcdefghijklmnopqrstuvwxyzøæå"; // Norwegian
+        else if (language.equals("eng")) alphabet = "abcdefghijklmnopqrstuvwxyz"; // English
 
-        char[] alphabetArray = alphabet.toCharArray(); // alfabetet nummereres
-        char[] cipherArray = (ciphertext.toLowerCase()).toCharArray(); // ciphertext til array
-        int[] charNumber = new int[ciphertext.length()]; // ciphertext til nummer i array
+        char[] alphabetArray = alphabet.toCharArray(); // Putting alphabet into char array
+        char[] cipherArray = (ciphertext.toLowerCase()).toCharArray(); // ciphertext to array
+        int[] charNumber = new int[ciphertext.length()]; // ciphertext to number in array
 
-        // Konvertering
+        // Converting
         for (int rot = 1; rot < alphabetArray.length; rot++) {
             String plaintext = "";
             for (int i = 0; i < cipherArray.length; i++) {
-                charNumber[i] = alphabet.indexOf(cipherArray[i]); // Setter alfabetisk verdi av plaintext inn i int array
+                charNumber[i] = alphabet.indexOf(cipherArray[i]); // Setting alphabetic value of plaintext into an int array
 
-                // Bestemmer plaintext-siffer-verdien
+                // Decide plaintext cipher value
                 int decodedCharNumber;
                 if (charNumber[i] - rot < 0) decodedCharNumber = alphabetArray.length + (charNumber[i] - rot);
                 else decodedCharNumber = charNumber[i] - rot;
 
-                char newDecodedChar = alphabetArray[decodedCharNumber]; // Konverterer plaintext-siffer-verdien til bokstav
-                plaintext += newDecodedChar; // Setter sammen plaintext
+                char newDecodedChar = alphabetArray[decodedCharNumber]; // Convert plaintext cipher value to letter
+                plaintext += newDecodedChar; // Put together plaintext
             }
             System.out.println(" - PLAINTEXT ROT" + rot + ":\t" + plaintext); // Print
         }
