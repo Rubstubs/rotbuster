@@ -32,4 +32,9 @@ public class testEncode {
         String cipher = Encode.encodeSpecific(13, "nor", plain);
         assertEquals(cipher, "ÆIK");
     }
+
+    @Test
+    void shouldFail() {
+        assertEquals(1,2);
+    }
 }
