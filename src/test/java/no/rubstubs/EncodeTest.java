@@ -6,28 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EncodeTest {
     @Test
-    void shouldEncodeEnglishNoWrap() {
-        String plain = "abc";
-        String cipher = Encode.encodeSpecific(2, "eng", plain);
-        assertEquals(cipher, "CDE");
-    }
-
-    @Test
-    void shouldEncodeEnglishWrap() {
+    void shouldEncodeEnglish() {
         String plain = "fyx";
         String cipher = Encode.encodeSpecific(13, "eng", plain);
         assertEquals(cipher, "SLK");
     }
 
     @Test
-    void shouldEncodeNorwegianNoWrap() {
-        String plain = "abc";
-        String cipher = Encode.encodeSpecific(2, "nor", plain);
-        assertEquals(cipher, "CDE");
-    }
-
-    @Test
-    void shouldEncodeNorwegianWrap() {
+    void shouldEncodeNorwegia() {
         String plain = "oyø";
         String cipher = Encode.encodeSpecific(13, "nor", plain);
         assertEquals(cipher, "ÆIK");

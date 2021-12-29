@@ -6,17 +6,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DecodeTest {
     @Test
-    void shouldDecodeRot2WithoutWrapEnglish() {
-        String cipher = "CDE";
-        String plain = Decode.decodeSpecific(2, "eng", cipher);
-        assertEquals(plain, "abc");
-    }
-
-    @Test
-    void shouldDecodeRot13WithWrapEnglish() {
+    void shouldDecodeRot13English() {
         String cipher = "CDE";
         String plain = Decode.decodeSpecific(13, "eng", cipher);
         assertEquals(plain, "pqr");
+    }
+
+    @Test
+    void shouldDecodeRot13Norwegian() {
+        String cipher = "ÆIK";
+        String plain = Decode.decodeSpecific(13, "nor", cipher);
+        assertEquals(plain, "oyø");
     }
 
 }
