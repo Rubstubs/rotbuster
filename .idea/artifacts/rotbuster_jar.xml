@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="rotbuster:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/rotbuster_jar</output-path>
-    <root id="archive" name="rotbuster.jar">
-      <element id="module-output" name="rotbuster" />
-    </root>
-  </artifact>
-</component>
