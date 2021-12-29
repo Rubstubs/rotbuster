@@ -19,4 +19,18 @@ class DecodeTest {
         assertEquals(plain, "oyø");
     }
 
+    @Test
+    void shouldReturnAllDecodedAlternativesNorwegian() {
+        String cipher = "ABC";
+        char[] allDecoded = Decode.decodeAll( "nor", cipher);
+        assertEquals( 29, allDecoded.length);
+    }
+
+    @Test
+    void shouldReturnAllDecodedAlternativesEnglish() {
+        String cipher = "ABC";
+        char[] allDecoded = Decode.decodeAll( "eng", cipher);
+        assertEquals( 26, allDecoded.length);
+    }
+
 }

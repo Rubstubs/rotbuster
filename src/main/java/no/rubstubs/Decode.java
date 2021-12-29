@@ -44,7 +44,7 @@ public class Decode {
         return plaintext;
     }
 
-    static void decodeAll(String language, String ciphertext) {
+    static char[] decodeAll(String language, String ciphertext) {
         System.out.println("\nDECODING ALL ROTS FROM CIPHERTEXT: " + ciphertext + "\n"); // Print
 
         // Setting reference alphabet
@@ -72,5 +72,6 @@ public class Decode {
             }
             System.out.println(" - PLAINTEXT ROT" + rot + ":\t" + plaintext); // Print
         }
+        return alphabetArray;
     }
 }
