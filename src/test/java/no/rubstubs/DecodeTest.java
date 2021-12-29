@@ -33,4 +33,9 @@ class DecodeTest {
         assertEquals( 26, allDecoded.length);
     }
 
+    @Test
+    void shouldReturnNull() {
+        assertNull(Decode.decodeSpecific(12, "not-a-language", "abc"));
+        assertNull(Decode.decodeSpecific(55, "eng", "abc"));
+    }
 }
