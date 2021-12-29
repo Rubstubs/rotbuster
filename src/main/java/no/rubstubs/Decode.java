@@ -1,7 +1,7 @@
 package no.rubstubs;
 
 public class Decode {
-    static void decodeSpecific(int rot, String language, String ciphertext) {
+    static String decodeSpecific(int rot, String language, String ciphertext) {
 
         // Setting reference alphabet
         String alphabet;
@@ -9,7 +9,7 @@ public class Decode {
          else if (language.equals("eng")) alphabet = "abcdefghijklmnopqrstuvwxyz"; // english
          else {
             System.out.println("NOT A VALID LANGUAGE");
-            return;
+            return null;
         }
 
         char[] alphabetArray = alphabet.toCharArray(); // Putting alphabet into char array
@@ -17,7 +17,7 @@ public class Decode {
         // Handling user error in rot format selection
         if (rot < 1 || rot > (alphabetArray.length-1)) {
             System.out.println("\nERROR: CHOOSE A ROT FORMAT BETWEEN 1 AND " + (alphabetArray.length-1) + "!");
-            return;
+            return null;
         }
 
         char[] cipherArray = (ciphertext.toLowerCase()).toCharArray(); // ciphertext to array
@@ -41,6 +41,7 @@ public class Decode {
         System.out.println("\nDECODING ROT" + rot + "\n");
         System.out.println(" - CIPHERTEXT:  " + ciphertext.toUpperCase());
         System.out.println(" - PLAINTEXT:   " + plaintext);
+        return plaintext;
     }
 
     static void decodeAll(String language, String ciphertext) {

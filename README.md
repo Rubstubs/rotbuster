@@ -1,4 +1,5 @@
 [![Build with Maven](https://github.com/Rubstubs/rotbuster/actions/workflows/maven.yml/badge.svg)](https://github.com/Rubstubs/rotbuster/actions/workflows/maven.yml)
+
 # Rubens RotBuster
 
 Command-line tool for encoding or decoding ROT-ciphers
