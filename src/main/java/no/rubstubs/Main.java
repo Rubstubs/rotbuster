@@ -3,31 +3,33 @@ package no.rubstubs;
 public class Main {
     public static void main(String[] args) {
         // CALL HELP SCREEN
-        if (args.length == 0 || args[0].equals("-h") || args[0].equals("-help")) {
-            Help.help();
+        if (args.length == 0) {
+            PrintToScreen.help();
+        } else {
+            switch(args[0]) {
+                case "help":
+                    PrintToScreen.help();
+                    break;
+                case "enc":
 
-        // CALL ENCODE METHOD
-        } else if (args.length == 4 && (args[0].equals("-enc") || args[0].equals("enc"))){
-            int rot = Integer.parseInt(args[1]);
-            String lang;
-            if(args[2].equals("nor") || args[2].equals("-nor")) { lang = "nor"; } else lang = "eng";
-            String text = args[3];
-            Encode.encodeSpecific(rot, lang, text);
+                    assert(args.length == 3);
 
-        // CALL DECODE ALL METHOD
-        } else if (args.length == 4 && (args[0].equals("-dec") || args[0].equals("dec")) && ((args[1].equals("-all") || (args[1].equals("all"))))) {
-            String lang;
-            if(args[2].equals("nor") || args[2].equals("-nor")) { lang = "nor"; } else lang = "eng";
-            String text = args[3];
-            Decode.decodeAll(lang, text);
+                    int rot = Integer.parseInt(args[1]);
+                    String text = args[2];
+                    Encode.encodeSpecific(rot, text);
+                    break;
+                case "dec":
 
-        // DECODE SPECIFIC ROT METHOD
-        } else if (args.length == 4 && (args[0].equals("-dec") || args[0].equals("dec"))) {
-            int rot = Integer.parseInt(args[1]);
-            String lang;
-            if(args[2].equals("nor") || args[2].equals("-nor")) { lang = "nor"; } else lang = "eng";
-            String text = args[3];
-            Decode.decodeSpecific(rot, lang, text);
+                    assert(args.length == 3);
+
+                    String mode = args[1];
+                    String cipher = args[2];
+
+                    if (mode.equals("all")) {
+                        Decode.decodeAll(cipher);
+                    } else Decode.decodeSpecific(Integer.parseInt(mode), cipher);
+                    break;
+            }
         }
     }
 }
