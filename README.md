@@ -1,5 +1,5 @@
 [![Build with Maven](https://github.com/Rubstubs/rotbuster/actions/workflows/maven.yml/badge.svg)](https://github.com/Rubstubs/rotbuster/actions/workflows/maven.yml)
-
+[![Coverage Status](https://coveralls.io/repos/github/Rubstubs/rotbuster/badge.svg?branch=main)](https://coveralls.io/github/Rubstubs/rotbuster?branch=main)
 # ROTBUSTER
 
 Command-line tool for encoding or decoding ROT-ciphers
