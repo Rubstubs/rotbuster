@@ -1,6 +1,6 @@
 [![Build with Maven](https://github.com/Rubstubs/rotbuster/actions/workflows/maven.yml/badge.svg)](https://github.com/Rubstubs/rotbuster/actions/workflows/maven.yml)
 
-# Rubens RotBuster
+# ROTBUSTER
 
 Command-line tool for encoding or decoding ROT-ciphers
 
@@ -17,26 +17,27 @@ mvn package
 
 ### Usage
 
-    [ENCODE OR DECODE] [ROT FORMAT] [LANGUAGE] [TEXT]
-
-	
-Example
-    
-    java -jar .\target\rotbuster-1.0-SNAPSHOT.jar -enc 13 -eng "helloworld"
+    [MODE] [ROT FORMAT] [TEXT]
 
 
 ### Functions
 
-        -h, -help                       help screen
+	[MODE]              dec / enc / help
+                        
+                        dec:    Decrypt
+                        enc:    Encrypt
+                        help:   Help screen
 
-	[EN-/DECODE]			-enc/enc (encode) or -dec/dec (decode)
+	[ROT FORMAT]        1-25 / all
 
-	[ROT FORMAT]			number representing ROT format, or -all/all(Only for decode-mode)
+                        1-25:   Number representing ROT format
+                        all:    Show all possible decryptions (only for dec mode)
 
-	[LANGUAGE]			-nor/nor or -eng/eng
+	[TEXT]	            "text" (no spaces or special characters outside english alphabet)
 
-	[PLAINTEXT]/[CIPHERTEXT]	"text" (no spaces or special characters)
-
+Example
+    
+    java -jar .\target\rotbuster-1.0-SNAPSHOT.jar enc 13 helloworld
 
 ### Additional Notes
-* Currently supporting norwegian and english languages only
+* Only supporting english for now
